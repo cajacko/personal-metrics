@@ -1,6 +1,5 @@
 name: github pages
 
-# FIXME: Comment to trigger build
 on:
   push:
     branches:
