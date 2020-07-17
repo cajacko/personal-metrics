@@ -29,7 +29,11 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - run: yarn install --frozen-lockfile
-      - run: yarn build
+
+      - name: Build
+        run: yarn build
+        env:
+          GOOGLE_SHEETS_URL: ${{ secrets.GOOGLE_SHEETS_URL }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
