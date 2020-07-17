@@ -31,12 +31,15 @@ jobs:
       - run: yarn install --frozen-lockfile
 
       - name: Build
-        run: yarn build
+        run: yarn build:data
         env:
           GOOGLE_SHEETS_URL: ${{ secrets.GOOGLE_SHEETS_URL }}
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - uses: EndBug/add-and-commit@v4 # You can change this to use a specific version
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          # The message for the commit
+          # Default: 'Commit from GitHub Actions'
+          message: "Added new data"
+        env:
+          # This is necessary in order to push a commit to the repo
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
