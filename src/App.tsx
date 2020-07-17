@@ -1,8 +1,15 @@
 import React from "react";
+import { join } from "path";
 import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
+  React.useEffect(() => {
+    fetch(join(process.env.PUBLIC_URL, "/data/test.json"))
+      .then((res) => res.json())
+      .then(console.log);
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
