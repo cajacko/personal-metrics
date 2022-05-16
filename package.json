@@ -38,7 +38,7 @@
     "chart.js": "2.9.3",
     "dotenv-flow": "3.2.0",
     "fs-extra": "9.0.1",
-    "node-fetch": "2.6.0",
+    "node-fetch": "2.6.7",
     "react": "^16.13.1",
     "react-chartjs-2": "2.9.0",
     "react-dom": "^16.13.1",
